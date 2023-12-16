@@ -73,10 +73,6 @@ public class PlayerShipController : MonoBehaviour
         {
             ApplyBrake();
         }
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            ResetBrake();
-        }
         else
         {
             var zAxis = Input.GetAxisRaw("Vertical");
@@ -86,6 +82,12 @@ public class PlayerShipController : MonoBehaviour
 
         var xAxis = Input.GetAxis("Horizontal");
         ApplyRotation(xAxis * _playerShip.RotationSpeed);
+
+        
+        if (!Input.GetKey(KeyCode.X) && _rb.drag > 0)
+        {
+            ResetBrake();
+        }
     }
 
     private void ApplyThrust(float amount)
