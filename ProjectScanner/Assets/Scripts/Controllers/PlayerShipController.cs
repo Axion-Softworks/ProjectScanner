@@ -73,6 +73,10 @@ public class PlayerShipController : MonoBehaviour
         {
             ApplyBrake();
         }
+        if (Input.GetKeyUp(KeyCode.X))
+        {
+            ResetBrake();
+        }
         else
         {
             var zAxis = Input.GetAxisRaw("Vertical");
@@ -98,25 +102,17 @@ public class PlayerShipController : MonoBehaviour
 
     private void ApplyRotation(float amount)
     {
-        transform.Rotate(0, amount, 0);
-        //_rb.AddTorque(0, amount, 0);
+        _rb.AddTorque(0, amount, 0);
     }
 
     private void ApplyBrake() 
     {
-        Vector3 force = new Vector3(0, 0, _playerShip.Acceleration);
+        _rb.drag = 1;
+    }
 
-        if ((_rb.velocity.z > 0 && _rb.velocity.z < 0.5f) || (_rb.velocity.z > -0.5f && _rb.velocity.z < 0))
-        {
-            _rb.velocity = Vector3.zero;
-            _rb.angularVelocity = Vector3.zero;
-        }
-            
-        else if (_rb.velocity.z > 0)
-            _rb.AddForce(-force);
-        else if (_rb.velocity.z < 0)
-            _rb.AddForce(force);
-        
+    private void ResetBrake()
+    {
+        _rb.drag = 0;
     }
 
     private void ClampVelocity()
