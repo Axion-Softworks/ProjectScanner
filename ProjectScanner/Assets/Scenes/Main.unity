@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &133501081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 773581450624402868, guid: c6ec4841107f7fa479bfc8d208db0d25, type: 3}
+  m_PrefabInstance: {fileID: 3395937419129626775}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &314566921 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3324753710518020244, guid: c6ec4841107f7fa479bfc8d208db0d25, type: 3}
@@ -227,6 +232,24 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 4307106743211632938, guid: c6ec4841107f7fa479bfc8d208db0d25, type: 3}
   m_PrefabInstance: {fileID: 3395937419129626775}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1883178665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133501081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 882569b4b3685864a92c53c83ced97a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoom: 0
+  zoomMultiplier: 4
+  velocity: 0
+  minZoom: 10
+  maxZoom: 30
+  smoothTime: 0.25
 --- !u!1001 &3395937419129626775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -279,10 +302,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicShip
       objectReference: {fileID: 0}
+    - target: {fileID: 4307106743211632938, guid: c6ec4841107f7fa479bfc8d208db0d25, type: 3}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 773581450624402868, guid: c6ec4841107f7fa479bfc8d208db0d25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1883178665}
   m_SourcePrefab: {fileID: 100100000, guid: c6ec4841107f7fa479bfc8d208db0d25, type: 3}
 --- !u!1001 &3451729274638361377
 PrefabInstance:
@@ -421,6 +451,18 @@ PrefabInstance:
     - target: {fileID: 3896802446115378574, guid: 619d5955b6189a74fb8dcb3bca119ae3, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442020346878816661, guid: 619d5955b6189a74fb8dcb3bca119ae3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442020346878816661, guid: 619d5955b6189a74fb8dcb3bca119ae3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442020346878816661, guid: 619d5955b6189a74fb8dcb3bca119ae3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 5442020346878816661, guid: 619d5955b6189a74fb8dcb3bca119ae3, type: 3}
       propertyPath: m_LocalPosition.x
