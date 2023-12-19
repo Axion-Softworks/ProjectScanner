@@ -1,8 +1,9 @@
+using Cinemachine;
 using UnityEngine;
 public class CameraZoom : MonoBehaviour
 {
     // Movement based Scroll Wheel Zoom.
-    private Camera cam;
+    private CinemachineVirtualCamera cam;
     public float zoom;
     public float zoomMultiplier = 4f;
     public float velocity = 0f;
@@ -12,8 +13,8 @@ public class CameraZoom : MonoBehaviour
 
     private void Start()
     {
-        cam = this.GetComponent<Camera>();
-        zoom = cam.orthographicSize;
+        cam = this.GetComponent<CinemachineVirtualCamera>();
+        zoom = cam.m_Lens.OrthographicSize;
     }
 
     void Update()
@@ -21,6 +22,6 @@ public class CameraZoom : MonoBehaviour
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         zoom -= scroll * zoomMultiplier;
         zoom = Mathf.Clamp(zoom, minZoom, maxZoom);
-        cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, zoom, ref velocity, smoothTime);
+        cam.m_Lens.OrthographicSize = Mathf.SmoothDamp(cam.m_Lens.OrthographicSize, zoom, ref velocity, smoothTime);
     }
 }
