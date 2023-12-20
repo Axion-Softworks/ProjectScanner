@@ -11,6 +11,8 @@ public class PlayerShipController : MonoBehaviour
 
     [Header("Variables")]
     private bool _blastShieldState;
+    public bool accelerating;
+    public bool reversing;
 
     #region Monobehaviour API
 
@@ -94,6 +96,22 @@ public class PlayerShipController : MonoBehaviour
     {
         Vector3 force = new Vector3(0, 0, amount);
 
+        if (amount == 0)
+        {
+            accelerating = false;
+            reversing = false;
+        }
+        else if (float.IsNegative(amount))
+        {
+            accelerating = false;
+            reversing = true;
+        }
+        else if (!float.IsNegative(amount)) 
+        {
+            accelerating = true;
+            reversing = false;
+        }
+
         if (_rb.velocity.z < _playerShip.MaxSpeed || 
             _rb.velocity.z == _playerShip.MaxSpeed && amount < 0 ||
             _rb.velocity.z == -_playerShip.MaxSpeed && amount > 0)
@@ -110,6 +128,8 @@ public class PlayerShipController : MonoBehaviour
     private void ApplyBrake() 
     {
         _rb.drag = 1;
+        accelerating = false;
+        reversing = false;
     }
 
     private void ResetBrake()
