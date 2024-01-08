@@ -7,4 +7,6 @@ public class Ship : MonoBehaviour
     public float MaxSpeed = 10f;
     public float Mass = 2f;
     public float RotationSpeed = 1f;
+    public int numberOfSensors = 8;
+    public float sensorDistance = 10f;
 }

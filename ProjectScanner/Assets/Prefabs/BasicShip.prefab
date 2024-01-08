@@ -19446,6 +19446,37 @@ MonoBehaviour:
   minLifetime: 0
   maxLifetime: 1
   reverse: 1
+--- !u!1 &7820102980254517886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2935288602545257125}
+  m_Layer: 0
+  m_Name: Sensors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2935288602545257125
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820102980254517886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2695462990192767534}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2513725695064774085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19511,6 +19542,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6e4e252df56993f4e995094be0288911, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4737384127387609251}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6e4e252df56993f4e995094be0288911, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2935288602545257125}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e4e252df56993f4e995094be0288911, type: 3}
       insertIndex: -1
@@ -19524,6 +19558,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e4e252df56993f4e995094be0288911, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3325568308951332663}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e4e252df56993f4e995094be0288911, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4228887622721951843}
   m_SourcePrefab: {fileID: 100100000, guid: 6e4e252df56993f4e995094be0288911, type: 3}
 --- !u!4 &2695462990192767534 stripped
 Transform:
@@ -19572,6 +19609,7 @@ MonoBehaviour:
   MaxSpeed: 10
   Mass: 2
   RotationSpeed: 1
+  numberOfSensors: 8
 --- !u!114 &1841411080519161719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19613,3 +19651,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4228887622721951843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3324753710518020244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354c9b4bcfdef6c4994044ea016fbe52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensorPrefab: {fileID: 2783526991443108561, guid: e0f9070b31cdeb743ab704bbcbd3873e, type: 3}
+  sensorParent: {fileID: 7820102980254517886}
+  _sensors: []
