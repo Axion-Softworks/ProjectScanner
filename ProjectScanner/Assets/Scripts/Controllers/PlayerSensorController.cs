@@ -7,7 +7,7 @@ public class PlayerSensorController : MonoBehaviour
     private Ship _playerShip;
     public GameObject sensorPrefab;
     public GameObject sensorParent;
-    private List<GameObject> _sensors;
+    private List<GameObject> _sensors = new List<GameObject>();
 
     [Header("Variables")]
     private bool _deployed;
