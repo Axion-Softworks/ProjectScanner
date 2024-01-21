@@ -1,7 +1,7 @@
 using Cinemachine;
 using UnityEngine;
 
-public class GameStateController : MonoBehaviour
+public class ScreenStateController : MonoBehaviour
 {
     [Header("Components")]
     public CinemachineVirtualCamera camMap;
@@ -9,7 +9,6 @@ public class GameStateController : MonoBehaviour
     public Camera mainCamera;
     
     [Header("Variables")]
-    public EScreenState screenState = EScreenState.ThreeD;
     private int _layer3D = 9;
     private int _layerMap = 10;
 
@@ -27,8 +26,6 @@ public class GameStateController : MonoBehaviour
 
     public void ToggleScreenState(EScreenState state)
     {
-        screenState = state;
-
         if (state == EScreenState.ThreeD)
         {
             cam3D.enabled = true;

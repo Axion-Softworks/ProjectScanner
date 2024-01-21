@@ -5,7 +5,7 @@ public class CameraZoomMap : MonoBehaviour
     // Movement based Scroll Wheel Zoom.
     [Header("Components")]
     private CinemachineVirtualCamera _cam;
-    private GameStateController _gameStateController;
+    private GameStateManager _gameStateManager;
 
     [Header("Variables")]
     public float zoom;
@@ -18,7 +18,7 @@ public class CameraZoomMap : MonoBehaviour
 
     private void Start()
     {
-        _gameStateController = FindObjectOfType<GameStateController>();
+        _gameStateManager = FindObjectOfType<GameStateManager>();
         SetActive();
         
         _cam = this.GetComponent<CinemachineVirtualCamera>();
@@ -39,7 +39,7 @@ public class CameraZoomMap : MonoBehaviour
                 && scroll > 0
                 )
             {
-                _gameStateController.ToggleScreenState(EScreenState.ThreeD);
+                _gameStateManager.ToggleScreenState(EScreenState.ThreeD);
             }
             else if (_cam.m_Lens.OrthographicSize >= minZoom) 
             {
@@ -52,6 +52,6 @@ public class CameraZoomMap : MonoBehaviour
 
     public void SetActive()
     {
-        active = _gameStateController.screenState == EScreenState.Map;
+        active = _gameStateManager.screenState == EScreenState.Map;
     }
 }
