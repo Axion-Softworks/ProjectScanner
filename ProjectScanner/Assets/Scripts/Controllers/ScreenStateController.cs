@@ -35,6 +35,8 @@ public class ScreenStateController : MonoBehaviour
             mainCamera.cullingMask = ~(1 << _layerMap);
             // Switch on layer 9, leave others as-is
             mainCamera.cullingMask |= (1 << _layer3D);
+
+            mainCamera.GetComponent<CameraScanlineEffect>().EffectPlay(0f);
         }
         else 
         {
@@ -45,6 +47,8 @@ public class ScreenStateController : MonoBehaviour
             mainCamera.cullingMask = ~(1 << _layer3D);
             // Switch on layer 10, leave others as-is
             mainCamera.cullingMask |= (1 << _layerMap);
+
+            mainCamera.GetComponent<CameraScanlineEffect>().EffectPlay(0.05f);
         }
     }
 }

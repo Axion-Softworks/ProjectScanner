@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8484582494777750702}
   - component: {fileID: 1500555113314459780}
   - component: {fileID: 1841091746921537101}
-  m_Layer: 9
-  m_Name: StarfieldBackground
+  m_Layer: 10
+  m_Name: MapBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9853274a35c69d543968b63ef32c8777, type: 2}
+  - {fileID: 2100000, guid: a1bdb12d23f12e646b1fbedec7260b81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
